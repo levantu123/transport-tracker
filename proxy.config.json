@@ -1,0 +1,23 @@
+{
+    "/vehicals": {
+      "target": "http://localhost:8080/vehicals",
+      "secure": false,
+      "pathRewrite": {
+        "^/vehicals": ""
+      }
+    },
+    "/vestiges": {
+      "target": "http://localhost:8080/vestiges",
+      "secure": false,
+      "pathRewrite": {
+        "^/vestiges": ""
+      }
+    },
+    "/socket.io": {
+      "target": "http://localhost:3000/socket.io",
+      "secure": false,
+      "pathRewrite": {
+        "^/socket.io": ""
+      }
+    }
+  }
