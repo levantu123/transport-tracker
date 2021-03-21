@@ -11,8 +11,14 @@ import { DeviceService } from '../services/device.service';
 export class HomeComponent implements OnInit {
 
   constructor(private deviceService: DeviceService) { }
-  obsers: Array<Observable<Marker>> = [];
   ngOnInit(): void {
+
+    this.deviceService.getAllDevices().subscribe(data=>{
+      this.deviceService.getById(data.id).subscribe(e=>{
+        console.log(e);
+      })
+    });
+
     this.devices = this.deviceService.getDevicesByGroupName();
     this.devices.forEach(device => {
       var obser = new Observable<Marker>(observer => {
@@ -41,7 +47,7 @@ export class HomeComponent implements OnInit {
         mark = v;
       })
       this.marks.push(mark);
-      this.obsers.push(obser);
+      //this.obsers.push(obser);
     })
 
   }
