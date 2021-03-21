@@ -1,0 +1,7 @@
+<h2>Feet Monitoring</h2>
+<div class="map-view">
+
+    <div style="height: 100%;" leaflet [leafletOptions]="options">
+        <div *ngFor="let l of marks" [leafletLayer]="l"></div>
+    </div>
+</div>
